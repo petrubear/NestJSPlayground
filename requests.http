@@ -1,0 +1,30 @@
+POST http://localhost:3000/products
+Content-Type: application/json
+
+{
+  "title": "A test",
+  "description": "content",
+  "price": 12.99
+}
+
+### GET all products
+GET http://localhost:3000/products
+Content-Type: application/json
+
+
+### GET single product
+GET http://localhost:3000/products/4429f07b-a823-4fbd-bed2-15612817447d
+Content-Type: application/json
+
+### Update single product
+PATCH http://localhost:3000/products/56ffed57-0045-4062-aa8e-b2d04b48badb
+Content-Type: application/json
+
+{
+  "title": "New Product",
+  "price": 62.00
+}
+
+### Delete single product
+DELETE http://localhost:3000/products/8e64e9d5-fd90-42dc-bc69-003acdb0d12e
+Content-Type: application/json
