@@ -9,14 +9,16 @@ import {
 } from '@nestjs/common';
 import { ProductsService } from './products.service';
 import { Product } from './product.model';
-import { ApiOperation, ApiTags } from '@nestjs/swagger';
+import { ApiBody, ApiOperation, ApiProperty, ApiTags } from '@nestjs/swagger';
 
 @ApiTags('products')
 @Controller('products')
 export class ProductsController {
   constructor(private readonly productsService: ProductsService) {}
 
+  @ApiOperation({ summary: 'Create a Product' })
   @Post()
+  @ApiBody({ type: Product })
   addProduct(
     @Body('title') prodTitle: string,
     @Body('description') prodDesc: string,
@@ -38,6 +40,7 @@ export class ProductsController {
   }
 
   @ApiOperation({ summary: 'Update Product' })
+  @ApiBody({ type: Product })
   @Patch(':id')
   updateProduct(
     @Param('id') prodId: string,
