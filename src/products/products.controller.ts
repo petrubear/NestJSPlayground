@@ -9,7 +9,7 @@ import {
 } from '@nestjs/common';
 import { ProductsService } from './products.service';
 import { Product } from './product.model';
-import { ApiBody, ApiOperation, ApiProperty, ApiTags } from '@nestjs/swagger';
+import { ApiBody, ApiOperation, ApiTags } from '@nestjs/swagger';
 
 @ApiTags('products')
 @Controller('products')
